@@ -1,23 +1,19 @@
-using Template
-
-using Aqua
 using Test
 
-function test_aqua()
-    @testset "Ambiguities" begin
-        Aqua.test_ambiguities(Template, recursive = false)
+function recursive_include(path::String)
+    for file in readdir(path)
+        file_path = joinpath(path, file)
+        if isdir(file_path)
+            recursive_include(file_path)
+            continue
+        elseif !endswith(file, ".jl")
+            continue
+        elseif startswith(file, "test_")
+            include(file_path)
+        end
     end
-    Aqua.test_all(Template, ambiguities = false)
-
-    return nothing
 end
 
-function test_all()
-    @testset "Aqua.jl" begin
-        test_aqua()
-    end
-
-    return nothing
+@testset verbose = true failfast = true "Template" begin
+    recursive_include(@__DIR__)
 end
-
-test_all()
