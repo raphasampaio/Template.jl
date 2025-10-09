@@ -1,5 +1,6 @@
 name = "Template"
 uuid = "2e8786bb-0a6d-41ac-b652-550829977f52"
+authors = ["raphasampaio"]
 version = "0.1.0"
 
 [deps]
