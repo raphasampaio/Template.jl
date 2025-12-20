@@ -31,6 +31,9 @@ jobs:
           # Replace Template with package name in files
           sed -i "s/Template/$PACKAGE_NAME/g" Project.toml
           sed -i "s/Template/$PACKAGE_NAME/g" src/Template.jl
+          sed -i "s/Template/$PACKAGE_NAME/g" README.md
+          sed -i "s/Template/$PACKAGE_NAME/g" revise/revise.jl
+          sed -i "s/Template/$PACKAGE_NAME/g" test/test_aqua.jl
 
           # Rename src/Template.jl to src/$PACKAGE_NAME.jl
           mv src/Template.jl "src/$PACKAGE_NAME.jl"
