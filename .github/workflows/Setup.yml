@@ -14,6 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Setup Julia
+        uses: julia-actions/setup-julia@v2
+        with:
+          version: "1"
+
       - name: Initialize package
         run: |
           # Get package name from repo name (strip .jl suffix if present)
@@ -21,8 +26,8 @@ jobs:
           PACKAGE_NAME="${REPO_NAME%.jl}"
           echo "Package name: $PACKAGE_NAME"
 
-          # Generate UUID
-          UUID=$(uuidgen)
+          # Generate UUID using Julia
+          UUID=$(julia -e 'using UUIDs; print(uuid4())')
           echo "Generated UUID: $UUID"
 
           # Get repository owner
