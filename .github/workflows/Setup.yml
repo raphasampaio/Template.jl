@@ -25,8 +25,15 @@ jobs:
           UUID=$(uuidgen)
           echo "Generated UUID: $UUID"
 
+          # Get repository owner
+          OWNER="${{ github.repository_owner }}"
+          echo "Owner: $OWNER"
+
           # Replace UUID placeholder in Project.toml
           sed -i "s/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/$UUID/g" Project.toml
+
+          # Replace authors in Project.toml
+          sed -i "s/aaaaaaaaaaaa/$OWNER/g" Project.toml
 
           # Replace Template with package name in files
           sed -i "s/Template/$PACKAGE_NAME/g" Project.toml
