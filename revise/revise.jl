@@ -7,7 +7,3 @@ Pkg.activate(dirname(@__DIR__))
 Pkg.instantiate()
 
 using Template
-@info("""
-This session is using Template.jl with Revise.jl.
-For more information visit https://timholy.github.io/Revise.jl/stable/.
-""")
