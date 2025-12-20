@@ -6,7 +6,7 @@ using Test
 
 @testset "Aqua" begin
     Aqua.test_ambiguities(Template, recursive = false)
-    Aqua.test_all(Template, recursive = false)
+    Aqua.test_all(Template, ambiguities = false)
     return nothing
 end
 

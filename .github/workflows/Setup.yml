@@ -35,7 +35,7 @@ jobs:
           echo "Owner: $OWNER"
 
           # Replace UUID placeholder in Project.toml
-          sed -i "s/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/$UUID/g" Project.toml
+          sed -i "s/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/$UUID/g" Project.toml
 
           # Replace authors in Project.toml
           sed -i "s/aaaaaaaaaaaa/$OWNER/g" Project.toml
