@@ -1,7 +1,7 @@
 name = "Template"
 uuid = "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
-authors = ["aaaaaaaaaaaa"]
 version = "0.1.0"
+authors = ["aaaaaaaaaaaa"]
 
 [deps]
 
